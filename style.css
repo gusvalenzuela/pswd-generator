@@ -21,6 +21,10 @@ h2, h3 {
     background: #777;
 }
 
+#pswd-length{
+    width 50%;
+}
+
 #passwordNum {
     width: 300px;
     text-align: center;

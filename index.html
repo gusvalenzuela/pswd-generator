@@ -10,19 +10,30 @@
 <body>
     <div class="container">
         <h1>Password Generator</h1>
-        <div id="inputs">
-            <h2>Please enter a desired length of password:</h2>                
-            <br> 
-            <input type="text" name="passwordNum" placeholder="(enter a number between 8 and 128)" id="passwordNum"> 
-            <br>
-            <input type="checkbox" name="upper-case" id="upper-case"> 
-            <label for="upper-case">Upper Case (A, B, C,...)</label>
-            <input type="checkbox" name="lower-case" id="lower-case">
-            <label for="lower-case">Lower Case (a, b, c,...)</label>
-            <input type="checkbox" name="special-characters" id="special-characters">
-            <label for="special-characters">Special Characters (#*&$...)</label>
-            <input type="checkbox" name="numbers" id="numbers"> 
-            <label for="numbers">Numbers (1, 2, 3,...)</label>
+        <div class="length-input">
+            <p>Password Length: <span id="val-holder"></span></p>
+            <input type="range" id="pswd-length" name="pswd-length" min="8" max="128">
+        </div>
+        <div class="options">
+            <ul class="options">
+                (must choose at least 1 option)
+                <li>
+                    <input type="checkbox" name="upper-case" id="upper-case"> 
+                    <label for="upper-case">A-Z</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="lower-case" id="lower-case">
+                    <label for="lower-case">a-z</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="special-characters" id="special-characters">
+                    <label for="special-characters">Special Characters (#*&$...)</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="numbers" id="numbers"> 
+                    <label for="numbers">Numbers (0-9)</label>
+                </li>
+            </ul>
         </div>
         <p id="content-here">Content Here</p>
         <button id="submit">CLICK HERE</button>            
