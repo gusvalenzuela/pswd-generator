@@ -1,0 +1,13 @@
+body, html {
+    min-height: 100%;
+}
+
+.container {
+    margin: auto;
+    text-align: center;
+}
+
+#passwordNum {
+    width: 50px;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>🐱‍👤 gus' Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator </h1>
+        <div id="inputs">
+            <label for="passwordNum">How long would you like your password to be?<br><i style="font-size: small;">(pick a between 8 and 128)</i></label>
+            <br><br><input type="text" name="passwordNum" placeholder="8 - 128" id="passwordNum"> Characters long
+            <br><input type="checkbox" name="upper-case" id="upper-case"> 
+            <label for="upper-case">Upper Case (A, B, C,...)</label>
+            <input type="checkbox" name="lower-case" id="lower-case">
+            <label for="lower-case">Lower Case (a, b, c,...)</label>
+            <input type="checkbox" name="special-characters" id="special-characters">
+            <label for="special-characters">Special Characters (#*&$...)</label>
+            <input type="checkbox" name="numbers" id="numbers"> 
+            <label for="numbers">Numbers (1, 2, 3,...)</label>
+        </div>
+        <p id="content-here">Content Here</p>
+        <button id="submit">CLICK HERE</button>            
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
