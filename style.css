@@ -2,12 +2,26 @@ body, html {
     min-height: 100%;
 }
 
+h2, h3 {
+    margin: 5px 0px;
+}
+
+.success {
+    border: solid 2px green;
+}
+
+.failure {
+    border: solid 2px red;
+}
+
 .container {
     margin: auto;
     text-align: center;
+
+    background: #777;
 }
 
 #passwordNum {
-    width: 50px;
+    width: 300px;
     text-align: center;
 }
