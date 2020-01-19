@@ -1,12 +1,16 @@
-body, html {
+body, html{
     min-height: 100%;
 }
 
-h2, h3 {
+h2, h3{
     margin: 5px 0px;
 }
 
-.success {
+.border-jumbo{
+    border-bottom: 3px inset black;
+}
+
+.success{
     border: solid 2px green;
 }
 
@@ -16,11 +20,15 @@ h2, h3 {
     text-align: center;
 }
 
-.failure {
+.content-wrap{
+    box-shadow: 2px 2px black ;
+}
+
+.failure{
     border: solid 2px red;
 }
 
-.container {
+.container{
     margin: auto;
     text-align: center;
     background: #777;
@@ -28,13 +36,15 @@ h2, h3 {
 
 .password-holder{
     /* height: 42px; */
-    border-width: 2px;
-    border-style: groove;
-    border-color: black;
+    border: 4px groove transparent;
 }
 
 .options-list{
     border: 4px groove transparent;
+}
+
+.footer{
+    border-top: 5px inset black;
 }
 
 /* Width at 336px and below */
