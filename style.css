@@ -10,6 +10,12 @@ h2, h3 {
     border: solid 2px green;
 }
 
+.msg-text{
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
 .failure {
     border: solid 2px red;
 }
@@ -21,6 +27,19 @@ h2, h3 {
 }
 
 .password-holder{
-    height: 42px;
-    border: dashed 2px black;
+    /* height: 42px; */
+    border-width: 2px;
+    border-style: groove;
+    border-color: black;
+}
+
+.options-list{
+    border: 4px groove transparent;
+}
+
+/* Width at 336px and below */
+@media screen and (max-width: 336px) {
+    .xs-screen{
+        font-size: 14px;
+    }
 }

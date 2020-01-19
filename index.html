@@ -10,51 +10,63 @@
 </head>
 <body>
     <!-- jumbo header  -->
-    <div class="container-lg">
-        <div class="row jumbotron jumbotron-fluid py-0 justify-content-center bg-info">
-            <div class="container bg-transparent px-0">
-              <h1 class="display-4">Password Generator</h1>
-              <p class="lead text-white">select your options and click generate</p>
-            </div>
+    <div class="row jumbotron jumbotron-fluid py-0 justify-content-center bg-dark mb-3">
+        <div class="container bg-transparent px-0">
+          <h1 class="display-4 text-primary">Password Generator</h1>
+          <p class="lead text-white">select your options and click generate</p>
         </div>
+    </div>
+    <div class="container-lg">
         <div class="row justify-content-center">            
-            <div class="col col-md-6 p-4">
+            <div class="col col-md-6 p-4 bg-dark">
+
                 <!-- row to hold the generated password  -->
-                <div class="row password-holder mb-3">
-                    <span class="col text-monospace text-truncate" id="password-holder"></span>
+                <div class="row password-holder mb-4 bg-white" id="password-holder">
+                    <span class="col text-monospace text-break" id="generated-password"></span>
                     <!-- need to add script for this copy2Clipboard to work  -->
-                    <button class="col-3 btn btn-secondary m-1 p-0 disabled" alt="currently inactive" title="currently inactive">copy</button>
+                    <button class="col-2 m-0 btn btn-secondary disabled rounded-0" alt="currently inactive" title="currently inactive">copy</button>
                 </div>
+
                 <!-- password length slider  -->
                 <div class="row length-input text-center justify-content-center">
                     <div class="col bg-dark text-white">
                         <div class="row justify-content-center pt-2">
                             <input class="col" type="range" id="pswd-length" name="pswd-length" min="8" max="128" value="8">
                         </div>
-                        <div class="row justify-content-center align-content-center">
-                            <p class="col-6 text-left mb-0">Password Length:</p>
-                            <span class="col-6 text-right" id="val-holder"></span>
+                        <div class="row justify-content-center align-content-center text-font">
+                            <p class="col text-left mb-0 px-2">Password Length:</p>
+                            <span class="col-3 text-right px-2" id="val-holder"></span>
                         </div>
                     </div>
                 </div>
-                <!-- options row/container -->
-                <ul class="row list-group options mb-3">
-                    <div class="col py-2 px-0">
-                        Choose a type of character to use: <p class="text-danger" id="display-msg"></p>
+
+                <div class="row justify-content-between">
+                    <div class="col-6 px-0 py-2 text-white">
+                        <p class="m-1 xs-screen">Choose character set:</p>
                     </div>
-                    <li class="list-group-item rounded-0" name="lower-case-bs" id="lower-case-bs">
-                        <input type="checkbox" name="lower-case" id="lower-case"> Lower Case: a-z
-                    </li>
-                    <li class="list-group-item" name="upper-case-bs" id="upper-case-bs">
-                        <input type="checkbox" name="upper-case" id="upper-case"> Upper Case: A-Z
-                    </li>
-                    <li class="list-group-item" name="special-bs" id="special-bs">
-                        <input type="checkbox" name="special" id="special"> Special Case: #*&$...
-                    </li>
-                    <li class="list-group-item rounded-0" name="numbers-bs" id="numbers-bs">
-                        <input type="checkbox" name="numbers" id="numbers"> Number: 0-9
-                    </li>
+                    <div class="col px-0 py-2">
+                        <p class="msg-text m-1" id="display-msg"></p>
+                    </div>
+                </div>
+
+                <!-- options row/container -->
+                <ul class="row list-group options mb-3 bg-dark">
+                    <div class="options-list">
+                        <li class="list-group-item rounded-0" name="lower-case-bs" id="lower-case-bs">
+                            <input type="checkbox" name="lower-case" id="lower-case"> Lower Case: a-z
+                        </li>
+                        <li class="list-group-item" name="upper-case-bs" id="upper-case-bs">
+                            <input type="checkbox" name="upper-case" id="upper-case"> Upper Case: A-Z
+                        </li>
+                        <li class="list-group-item" name="special-bs" id="special-bs">
+                            <input type="checkbox" name="special" id="special"> Special Case: #*&$...
+                        </li>
+                        <li class="list-group-item rounded-0" name="numbers-bs" id="numbers-bs">
+                            <input type="checkbox" name="numbers" id="numbers"> Number: 0-9
+                        </li>
+                    </div>
                 </ul>
+
                 <!-- <div class="row options justify-content-center bg-warning">
                     <ul class="col options">
                        
