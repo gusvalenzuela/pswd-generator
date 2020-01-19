@@ -17,11 +17,10 @@ h2, h3 {
 .container {
     margin: auto;
     text-align: center;
-
     background: #777;
 }
 
-#passwordNum {
-    width: 300px;
-    text-align: center;
+.password-holder{
+    height: 42px;
+    border: dashed 2px black;
 }
