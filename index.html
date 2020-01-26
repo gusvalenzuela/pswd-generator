@@ -12,19 +12,19 @@
     <!-- jumbo header  -->
     <div class="row jumbotron jumbotron-fluid py-0 justify-content-center bg-dark mb-3 border-jumbo">
         <div class="container bg-transparent px-0">
-          <h1 class="display-4 text-primary">Password Generator</h1>
+          <h1 class="display-4 text-info">Password Generator</h1>
           <p class="lead text-white">select your options --> generate</p>
         </div>
     </div>
     <div class="container-lg">
         <div class="row justify-content-center">            
-            <div class="col col-md-6 p-4 bg-dark content-wrap">
+            <div class="col-10 col-md-6 p-4 bg-dark content-wrap">
 
                 <!-- row to hold the generated password  -->
                 <div class="row password-holder mb-4 bg-white" id="password-holder">
-                    <span class="col text-monospace text-break" id="generated-password"></span>
+                    <span class="col text-monospace text-truncate px-1" id="generated-password"></span>
                     <!-- need to add script for this copy2Clipboard to work  -->
-                    <button class="col-2 m-0 btn btn-secondary disabled rounded-0" alt="currently inactive" title="currently inactive">copy</button>
+                    <button class="col-3 pb-1 m-1 btn-info rounded-0" alt="currently inactive" title="currently inactive">copy</button>
                 </div>
 
                 <!-- password length slider  -->
@@ -68,14 +68,14 @@
                 </ul>
                 
                 <div class="row justify-content-center">                    
-                    <button class="col-6" id="submit">Generate</button>  
+                    <button class="col-6" id="submit">Regenerate</button>  
                 </div>
             </div>
         </div>
     </div>
 
     <footer class="container-fluid py-3 footer text-center text-monospace bg-dark mt-5">
-        &copy; 2020 gus Valenzuela <a href="https://github.com/gusvalenzuela/pswd-generator" class="text-white">\\ code</a>
+        &copy; 2020 Gus Valenzuela <a href="https://github.com/gusvalenzuela/pswd-generator" class="text-white">\\ code</a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

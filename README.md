@@ -8,9 +8,9 @@
   <img src="./screenshot.png" alt="screenshot">
 </p>
 
-- In this day and age password security is very important and having unique passwords for all accounts is best practice. In order to facilitate this practice, my password generator randomly picks from a "pool" of lower case, upper case, special case, and/or number characters and dynamically creates a string - "password" - of 8 to 128 characters long (the longer the better!). You can then use this newly created "password" and use it as you wish. Enjoy!
+- In this day and age password security is very important and having unique passwords for all accounts is best practice. In order to facilitate this practice, my password generator randomly picks from a "pool" of lower case, upper case, special case, and/or number characters and dynamically creates a string - "password" - of 8 to 128 characters long (the longer the better!). You can then take this newly created "password" and use it as you wish. Enjoy!
 
-- You can find the generator here: https://gusvalenzuela.github.io/pswd-generator/
+- Find the generator here: https://gusvalenzuela.github.io/pswd-generator/
 
 - Go give it a try. More features to come.
 
@@ -27,7 +27,7 @@ Password generator will not run unless user provides:
     - Upper case letters (A - Z)
     - Special Characters (# - &)
     - Numbers (0 - 9)
-    - default: lower case letters
+    - default: none
 
 ## Section 2
 
