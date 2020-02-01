@@ -26,8 +26,7 @@ init ()
 
 function init (){
     sliderVal.textContent = slider.value // displaying default value
-    
-
+    runGenerator()
 }
 
 // copy to Clipboard 
@@ -117,7 +116,10 @@ function runGenerator(){
 
 // listening for click on my submit button to trigger password generator
 submitBtn.addEventListener(`click`, runGenerator)
-// copy2ClipBtn.addEventListener(`click`, )
+copy2ClipBtn.addEventListener(`click`, function(e){
+    e.preventDefault()
+    copyToClipboard(pswdHolder.textContent)
+})
 optionsList.addEventListener(`click`, isCheckboxSelected)
 
 // userNum = prompt("Please ENTER desired length of password (must be between: 8 - 128)")   

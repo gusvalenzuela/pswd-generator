@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- jumbo header  -->
-    <div class="jumbotron jumbotron-fluid py-0 justify-content-center bg-dark mb-3 border-jumbo">
+    <div class="jumbotron jumbotron-fluid py-1 justify-content-center bg-dark mb-5 border-jumbo">
         <div class="container bg-transparent px-0">
           <h1 class="display-4 text-info">Password Generator</h1>
           <p class="lead text-white">select your options --> generate</p>
@@ -23,12 +23,11 @@
                 <!-- row to hold the generated password  -->
                 <div class="row password-holder mb-4 bg-white" id="password-holder">
                     <span class="col text-monospace text-truncate px-1" id="generated-password"></span>
-                    <!-- need to add script for this copy2Clipboard to work  -->
-                    <button id="copyBtn" class="col-3 pb-1 m-1 btn-info rounded-0" alt="currently inactive" title="currently inactive">copy</button>
+                    <button id="copyBtn" class="col-3 pb-1 m-1 btn-info rounded-0" alt="copy-button" title="copy-button">copy</button>
                 </div>
 
                 <!-- password length slider  -->
-                <div class="row length-input text-center justify-content-center">
+                <div class="row length-span text-center justify-content-center">
                     <div class="col bg-dark text-white">
                         <div class="row justify-content-center pt-2">
                             <input class="col" type="range" id="pswd-length" name="pswd-length" min="8" max="128" value="8">
@@ -53,7 +52,7 @@
                 <ul class="row list-group options mb-3 bg-dark">
                     <div class="options-list">
                         <li class="list-group-item rounded-0" name="lower-case-bs" id="lower-case-bs">
-                            <input type="checkbox" name="lower-case" id="lower-case"> Lower Case (a-z)
+                            <input type="checkbox" name="lower-case" id="lower-case" checked> Lower Case (a-z)
                         </li>
                         <li class="list-group-item" name="upper-case-bs" id="upper-case-bs">
                             <input type="checkbox" name="upper-case" id="upper-case"> Upper Case (A-Z)
