@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- jumbo header  -->
-    <div class="row jumbotron jumbotron-fluid py-0 justify-content-center bg-dark mb-3 border-jumbo">
+    <div class="jumbotron jumbotron-fluid py-0 justify-content-center bg-dark mb-3 border-jumbo">
         <div class="container bg-transparent px-0">
           <h1 class="display-4 text-info">Password Generator</h1>
           <p class="lead text-white">select your options --> generate</p>
@@ -24,7 +24,7 @@
                 <div class="row password-holder mb-4 bg-white" id="password-holder">
                     <span class="col text-monospace text-truncate px-1" id="generated-password"></span>
                     <!-- need to add script for this copy2Clipboard to work  -->
-                    <button class="col-3 pb-1 m-1 btn-info rounded-0" alt="currently inactive" title="currently inactive">copy</button>
+                    <button id="copyBtn" class="col-3 pb-1 m-1 btn-info rounded-0" alt="currently inactive" title="currently inactive">copy</button>
                 </div>
 
                 <!-- password length slider  -->
