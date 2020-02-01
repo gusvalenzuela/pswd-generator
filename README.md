@@ -5,8 +5,11 @@
 - A generator that requires two user inputs to generate a string that can be used as a password
 
 <p align="center">
-  <img src="./screenshot.png" alt="screenshot">
+
+![Main screenshot of app](/screenshot.PNG)
+
 </p>
+
 
 - In this day and age password security is very important and having unique passwords for all accounts is best practice. In order to facilitate this practice, my password generator randomly picks from a "pool" of lower case, upper case, special case, and/or number characters and dynamically creates a string - "password" - of 8 to 128 characters long (the longer the better!). You can then take this newly created "password" and use it as you wish. Enjoy!
 
@@ -27,7 +30,7 @@ Password generator will not run unless user provides:
     - Upper case letters (A - Z)
     - Special Characters (# - &)
     - Numbers (0 - 9)
-    - default: none
+    - default: Lower case letters
 
 ## Section 2
 
