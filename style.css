@@ -54,6 +54,9 @@ h2, h3{
     background: #292b2c;
     color: #292b2c;
 }
+#resource-credits{
+    font-size: 12px;
+}
 /* Width at 336px and below */
 @media screen and (max-width: 336px) {
     .xs-screen{
