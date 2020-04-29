@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,17 +20,17 @@
     <title>🐱‍👤pswd generator🐱‍👤</title>
   </head>
 
-  <body>
+  <body class="d-flex flex-column h-100">
     <!-- jumbo header  -->
     <div
-      class="jumbotron jumbotron-fluid py-1 justify-content-center bg-dark mb-5 border-jumbo"
+      class="jumbotron jumbotron-fluid py-1 justify-content-center bg-dark jimmyjumbo"
     >
       <div class="container bg-transparent px-0">
         <h1 class="display-4 text-info">Password Generator</h1>
         <p class="lead text-white">select your options --> generate</p>
       </div>
     </div>
-    <div class="container-lg">
+    <main class="container-lg main-mane">
       <div class="row justify-content-center">
         <div class="col-10 col-md-8 col-lg-6 p-4 bg-dark content-wrap">
           <!-- row to hold the generated password  -->
@@ -40,10 +40,10 @@
               id="generated-password"
             ></span>
             <button
-              id="submit"
+              id="refresh-button"
               class="col-auto pb-1 m-1 btn-info rounded-0"
-              alt="copy-button"
-              title="copy-button"
+              alt="refresh-button"
+              title="refresh-button"
             >
               <i class="fa fa-refresh"></i>
             </button>
@@ -122,10 +122,10 @@
           </ul>
         </div>
       </div>
-    </div>
+    </main>
 
     <footer
-      class="container-fluid py-3 footer text-center text-monospace bg-dark mt-5"
+      class="container-fluid py-3 footer text-center text-monospace bg-dark mt-auto"
     >
       <span
         >&copy; 2020

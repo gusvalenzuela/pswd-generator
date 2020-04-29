@@ -1,10 +1,8 @@
 const slider = document.querySelector(`#pswd-length`);
 const sliderVal = document.querySelector(`#val-holder`);
-const submitBtn = document.querySelector(`#submit`);
 const pswdHolder = document.querySelector(`#generated-password`);
-const pswdDiv = document.querySelector(`#password-holder`);
+const refreshBtn = document.querySelector(`#refresh-button`);
 const optionsList = document.querySelector(`.options-list`);
-const inputOptions = document.querySelector(`#inputs`);
 const copy2ClipBtn = document.querySelector(`#copyBtn`);
 const lCaseString = `abcdefghijklmnopqrstuvwxyz`;
 const uCaseString = lCaseString.toUpperCase();
@@ -17,20 +15,17 @@ uCaseCheck = document.querySelector(`#upper-case`);
 lCaseCheck = document.querySelector(`#lower-case`);
 spCheck = document.querySelector(`#special`);
 numCheck = document.querySelector(`#numbers`);
-uCaseCheckBS = document.querySelector(`#upper-case-bs`);
-lCaseCheckBS = document.querySelector(`#lower-case-bs`);
-spCheckBS = document.querySelector(`#special-bs`);
-numCheckBS = document.querySelector(`#numbers-bs`);
 
 init();
 
 function init() {
   sliderVal.textContent = slider.value; // displaying default value
+  lCaseCheck.checked = true;
+  isCheckboxSelected();
   runGenerator();
 }
 
 // copy to Clipboard
-
 const copyToClipboard = (str) => {
   const el = document.createElement("textarea"); // Create a <textarea> element
   el.value = str; // Set its value to the string that you want copied
@@ -58,82 +53,58 @@ slider.oninput = function () {
 };
 
 function isCheckboxSelected() {
-  event.stopPropagation();
-  var el = event.target;
-
-  //   console.log(el);
-
-  if (el.type === `checkbox`) {
-    if (
-      uCaseCheck.checked ||
-      lCaseCheck.checked ||
-      spCheck.checked ||
-      numCheck.checked
-    ) {
-      msg.textContent = "";
-      optionsList.setAttribute(`style`, ``);
-    } else {
-      msg.textContent = "* must select one *";
-      optionsList.setAttribute(`style`, `border: 4px groove red;`);
-    }
+  if (
+    !uCaseCheck.checked &&
+    !lCaseCheck.checked &&
+    !spCheck.checked &&
+    !numCheck.checked
+  ) {
+    msg.textContent = "* must select one *";
+    optionsList.setAttribute(`style`, `border: 4px groove red;`);
+  } else {
+    msg.textContent = "";
+    optionsList.setAttribute(`style`, ``);
   }
 }
 
 // the generator
 function runGenerator() {
-  var currentString = "";
-  var generatedPswd = "";
+  let currentString = ``;
+  let generatedPswd = ``;
 
   pswdHolder.textContent = "";
 
-  // validating that at least one option has been checked
-  if (
-    uCaseCheck.checked ||
-    lCaseCheck.checked ||
-    spCheck.checked ||
-    numCheck.checked
-  ) {
-    // checking to see which checkboxes have been checked
-    // and adding relevant options subsection to the currentString to use for grabbing characters in the generator
-    if (lCaseCheck.checked) {
-      currentString = currentString + lCaseString;
-    }
-    if (uCaseCheck.checked) {
-      currentString = currentString + uCaseString;
-    }
-    if (spCheck.checked) {
-      currentString = currentString + spCharsString;
-    }
-    if (numCheck.checked) {
-      currentString = currentString + numString;
+  if (lCaseCheck.checked) {
+    currentString = currentString + lCaseString;
+  }
+  if (uCaseCheck.checked) {
+    currentString = currentString + uCaseString;
+  }
+  if (spCheck.checked) {
+    currentString = currentString + spCharsString;
+  }
+  if (numCheck.checked) {
+    currentString = currentString + numString;
+  }
+
+  if (currentString !== undefined) {
+    // creating a random number used to pull from the currentString by index
+    for (i = 0; i < slider.value; i++) {
+      var j = Math.floor(Math.random() * currentString.length);
+      generatedPswd = generatedPswd + currentString[j];
     }
   } else {
-    msg.textContent = "* must select one *";
-    optionsList.setAttribute(`style`, `border: 4px groove red;`);
-    return;
+    alert(`please select an option`);
   }
 
-  // creating a random number used to pull from the currentString by index
-  for (i = 0; i < slider.value; i++) {
-    var j = Math.floor(Math.random() * currentString.length);
-    generatedPswd = generatedPswd + currentString[j];
-  }
-
-  // checking the magic
-  console.log("password is: " + generatedPswd);
   pswdHolder.textContent = generatedPswd;
 }
 
-// listening for click on my submit button to trigger password generator
-submitBtn.addEventListener(`click`, runGenerator);
-copy2ClipBtn.addEventListener(`click`, function (e) {
-  e.preventDefault();
+copy2ClipBtn.addEventListener(`click`, () => {
   copyToClipboard(pswdHolder.textContent);
 });
-optionsList.addEventListener(`click`, isCheckboxSelected);
 
-$(optionsList).on(`click`, (event) => {
-  //   event.preventDefault();
+$(optionsList).on(`click`, () => {
   let target = $(event.target)[0];
 
   if (target.type === `checkbox`) {
@@ -142,13 +113,16 @@ $(optionsList).on(`click`, (event) => {
     let chosenInput = target.children[0];
 
     if ($(chosenInput).prop("checked") === true) {
-      $(chosenInput).prop("checked", false);
+      chosenInput.checked = false;
       $(event.target).attr(`style`, `background: white;`);
     } else {
-      $(chosenInput).prop("checked", true);
+      chosenInput.checked = true;
       $(event.target).attr(`style`, `background: red;`);
     }
+    isCheckboxSelected();
   }
 });
 
-// userNum = prompt("Please ENTER desired length of password (must be between: 8 - 128)")
+$(refreshBtn).click(() => {
+  runGenerator();
+});

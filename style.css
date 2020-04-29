@@ -1,73 +1,82 @@
-body, html{
-    min-height: 100%;
-    background: url(./congruent_pentagon.png);
-    margin-bottom: -50px;
+body {
+  background: url(./congruent_pentagon.png);
 }
 
-h2, h3{
-    margin: 5px 0px;
+h2,
+h3 {
+  margin: 5px 0px;
+}
+.main-mane {
+  margin-bottom: 3.3rem;
+}
+.list-group-item input {
+  display: none;
 }
 
-.border-jumbo{
-    border-bottom: 3px inset black;
+.jimmyjumbo {
+  margin-bottom: 3.3rem;
+  border-bottom: 3px inset black;
 }
 
-.success{
-    border: solid 2px green;
+.success {
+  border: solid 2px green;
 }
 
-.msg-text{
-    background-color: red;
-    color: white;
-    text-align: center;
+.msg-text {
+  background-color: red;
+  color: white;
+  text-align: center;
 }
 
-.content-wrap{
-    box-shadow: 2px 2px black ;
+.content-wrap {
+  box-shadow: 2px 2px black;
 }
 
-.failure{
-    border: solid 2px red;
+.failure {
+  border: solid 2px red;
 }
 
-.container{
-    margin: auto;
-    text-align: center;
-    background: #777;
+.container {
+  margin: auto;
+  text-align: center;
+  background: #777;
 }
 
-.password-holder{
-    border: 4px groove transparent;
+.password-holder {
+  border: 4px groove transparent;
 }
 
-.options-list{
-    border: 4px groove transparent;
+.options-list {
+  border: 4px groove transparent;
 }
-.options-list li input:checked{
-    border: 4px groove purple;
-}
-
-.footer{
-    border-top: 5px inset black;
-}
-#generated-password{
-    line-height: 40px;
-}
-#pswd-length{
-    background: #292b2c;
-    color: #292b2c;
-}
-#resource-credits{
-    font-size: 12px;
+.options-list li input:checked {
+  border: 4px groove purple;
 }
 
-.character-set-selected{
-    background: red;
+.footer {
+  border-top: 5px inset black;
+}
+#generated-password {
+  line-height: 40px;
+}
+#pswd-length {
+  background: #292b2c;
+  color: #292b2c;
+}
+#resource-credits {
+  font-size: 8px;
+  padding: 0;
+  line-height: 12px;
+}
+
+.character-set-selected {
+  background: rgb(122, 0, 0);
+  color: #ffffff;
 }
 
 /* Width at 336px and below */
 @media screen and (max-width: 336px) {
-    .xs-screen{
-        font-size: 14px;
-    }
+  .xs-screen {
+    font-size: 14px;
+  }
 }
