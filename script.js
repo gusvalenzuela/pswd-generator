@@ -21,6 +21,8 @@ init();
 function init() {
   sliderVal.textContent = slider.value; // displaying default value
   lCaseCheck.checked = true;
+  $(`#lower-case-li`).attr(`style`, `background: #03719C;`);
+  
   isCheckboxSelected();
   runGenerator();
 }
@@ -86,15 +88,16 @@ function runGenerator() {
   if (numCheck.checked) {
     currentString = currentString + numString;
   }
-
-  if (currentString !== undefined) {
+  
+  if (currentString !== ``) {
     // creating a random number used to pull from the currentString by index
     for (i = 0; i < slider.value; i++) {
       var j = Math.floor(Math.random() * currentString.length);
       generatedPswd = generatedPswd + currentString[j];
     }
   } else {
-    alert(`please select an option`);
+
+    pswdHolder.textContent(`Select an option below.`)
   }
 
   pswdHolder.textContent = generatedPswd;
@@ -117,8 +120,9 @@ $(optionsList).on(`click`, () => {
       $(event.target).attr(`style`, `background: white;`);
     } else {
       chosenInput.checked = true;
-      $(event.target).attr(`style`, `background: red;`);
+      $(event.target).attr(`style`, `background: #03719C;`);
     }
+
     isCheckboxSelected();
   }
 });
