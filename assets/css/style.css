@@ -1,0 +1,125 @@
+body {
+  background: url(../images/congruent_pentagon.png);
+}
+
+h2,
+h3 {
+  margin: 5px 0px;
+}
+.brand-text{
+  font-weight: 400;
+  color: #539667;
+  text-shadow: #010101 1px 1px;
+}
+.main-mane {
+  margin-bottom: 3.3rem;
+}
+.list-group-item:hover {
+  cursor: pointer;
+}
+.list-group-item input {
+  display: none;
+}
+
+.jimmyjumbo {
+  margin-bottom: 3.3rem;
+  border-bottom: 3px inset black;
+}
+#copy-button-inside,
+#refresh-button-inside {
+  display: block;
+  margin: 0;
+  margin-left: 0.25rem;
+  background: #539667 !important;
+}
+#copy-button-outside,
+#refresh-button-outside {
+  display: none;
+}
+
+.msg-text {
+  background-color: rgb(219, 0, 0);
+  color: white;
+  text-align: center;
+  font-size: smaller;
+}
+
+.content-wrap {
+  box-shadow: 2px 2px #010101;
+}
+
+.container {
+  margin: auto;
+  text-align: center;
+  background: #777;
+}
+
+.password-holder {
+  border: 4px groove transparent;
+}
+.btn-custom {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 !important;
+  border: 1px outset transparent;
+  background: #539667;
+  color: #f7f7f7;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+.btn-custom:hover {
+  border-color: #02020233;
+  opacity: .876543219;
+  transition: .5s ease;
+}
+.options-list {
+  border: 4px groove transparent;
+}
+.options-list li input:checked {
+  border: 4px groove purple;
+}
+.footer {
+  border-top: 5px inset black;
+}
+#generated-password {
+  line-height: 40px;
+  border: 1px #02020233 solid;
+  box-shadow: #02020211 2px 2px inset;
+}
+#pswd-length {
+  background: #292b2c;
+  color: #292b2c;
+  padding: 0.15rem;
+}
+#resource-credits {
+  font-size: 8px;
+  padding: 0;
+  line-height: 12px;
+}
+
+.character-set-selected {
+  background: rgb(219, 0, 0);
+  color: #ffffff;
+}
+
+/* Width at 576px and below */
+@media screen and (max-width: 576px) {
+  .s-screen {
+    font-size: 18px;
+  }
+}
+/* Width at 336px and below */
+@media screen and (max-width: 336px) {
+  .xs-screen {
+    font-size: 14px;
+  }
+  #copy-button-inside,
+  #refresh-button-inside {
+    display: none;
+  }
+  #copy-button-outside,
+  #refresh-button-outside {
+    display: block;
+    line-height: 0;
+  }
+}
