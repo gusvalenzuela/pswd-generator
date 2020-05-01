@@ -179,6 +179,20 @@
       >
     </footer>
 
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("sw-pswdgen.js")
+            .then((reg) => {
+              console.log(
+                "What do we have here? Seems we found your service worker file.",
+                reg
+              );
+            });
+        });
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.0.js"
       integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
@@ -201,18 +215,5 @@
       crossorigin="anonymous"
     />
     <script src="./assets/js/script.js"></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./service-worker.js").then((reg) => {
-            console.log(
-              "What do we have here? Seems we found your service worker file.",
-              reg
-            );
-          });
-        });
-      }
-    </script>
   </body>
-  
 </html>
