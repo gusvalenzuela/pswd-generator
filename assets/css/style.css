@@ -6,9 +6,12 @@ h2,
 h3 {
   margin: 5px 0px;
 }
+.fa {
+  color: #020202;
+}
 
 :root {
-  --main-color: #2bb454;
+  --main-color: #b1f6cb;
 }
 .brand-text {
   font-weight: 400;
@@ -38,6 +41,7 @@ h3 {
   margin: 0;
   margin-left: 0.25rem;
   background: var(--main-color) !important;
+  border: 1px #02020233 solid;
 }
 #copy-button-outside,
 #refresh-button-outside {
@@ -46,7 +50,7 @@ h3 {
 
 .msg-text {
   background-color: rgb(219, 0, 0);
-  color: white;
+  color: #ffffff;
   text-align: center;
   font-size: smaller;
 }
@@ -62,8 +66,8 @@ h3 {
 }
 .alert-mode {
   background: #01010177 !important;
-  filter: blur(1.1px);
-  transition: ease;
+  filter: blur(1px);
+  transition: .25s ease-in-out;
 }
 .password-holder {
   position: relative;
@@ -75,9 +79,10 @@ h3 {
   font-size: 18px;
   text-transform: uppercase;
   position: absolute;
-  left: 17%;
+  left:27%;
   top: 17%;
   padding: 0 0.5rem;
+  letter-spacing: 1rem;
 }
 .btn-custom {
   padding: 0.25rem 0.5rem;
@@ -131,7 +136,7 @@ h3 {
   }
 
   .copied-toast {
-    left: 5%;
+    left: 7%;
   }
 }
 /* Width at 336px and below */

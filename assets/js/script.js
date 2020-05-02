@@ -115,7 +115,7 @@ const showCopiedAlert = () => {
   setTimeout(() => {
     $(`.copied-toast`).hide();
     $(pswdHolder).removeClass(`alert-mode`);
-  }, 1500);
+  }, 2000);
 }
 
 $(copy2ClipBtn).on(`click`, () => {
