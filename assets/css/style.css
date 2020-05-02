@@ -6,13 +6,20 @@ h2,
 h3 {
   margin: 5px 0px;
 }
-.brand-text{
+
+:root{
+  --main-color: #2bb454;
+}
+.brand-text {
   font-weight: 400;
-  color: #539667;
+  color: var(--main-color);
   text-shadow: #010101 1px 1px;
 }
 .main-mane {
   margin-bottom: 3.3rem;
+}
+.l-group{
+  padding: 0 !important;
 }
 .list-group-item:hover {
   cursor: pointer;
@@ -30,7 +37,7 @@ h3 {
   display: block;
   margin: 0;
   margin-left: 0.25rem;
-  background: #539667 !important;
+  background: var(--main-color) !important;
 }
 #copy-button-outside,
 #refresh-button-outside {
@@ -53,15 +60,31 @@ h3 {
   text-align: center;
   background: #777;
 }
-
+.alert-mode {
+  background: #010101aa !important;
+  filter: blur(1.5px);
+}
 .password-holder {
+  position: relative;
   border: 4px groove transparent;
+}
+.copied-toast {
+  transition: 1s ease;
+  color: #ffffff;
+  /* background: #ffffff99; */
+  position: absolute;
+  font-weight: 500;
+  font-size: medium;
+  text-transform: lowercase;
+  left: 17%;
+  top: 17%;
+  padding: 0 .5rem;
 }
 .btn-custom {
   padding: 0.25rem 0.5rem;
   border-radius: 0 !important;
   border: 1px outset transparent;
-  background: #539667;
+  background: var(--main-color);
   color: #f7f7f7;
   text-align: center;
   vertical-align: middle;
@@ -69,8 +92,8 @@ h3 {
 }
 .btn-custom:hover {
   border-color: #02020233;
-  opacity: .876543219;
-  transition: .5s ease;
+  opacity: 0.876543219;
+  transition: 0.5s ease;
 }
 .options-list {
   border: 4px groove transparent;
@@ -106,6 +129,10 @@ h3 {
 @media screen and (max-width: 576px) {
   .s-screen {
     font-size: 18px;
+  }
+
+  .copied-toast {
+    left: 5%;
   }
 }
 /* Width at 336px and below */

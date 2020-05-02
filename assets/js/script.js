@@ -50,6 +50,7 @@ const copyToClipboard = (str) => {
     document.getSelection().removeAllRanges(); // Unselect everything on the HTML document
     document.getSelection().addRange(selected); // Restore the original selection
   }
+  showCopiedAlert()
 };
 
 // updating displayed value when value is changed (slider moved)
@@ -106,6 +107,15 @@ function runGenerator() {
   }
 
   pswdHolder.textContent = generatedPswd;
+}
+const showCopiedAlert = () => {
+  $(`.copied-toast`).show();
+  $(pswdHolder).addClass(`alert-mode`);
+
+  setTimeout(() => {
+    $(`.copied-toast`).hide();
+    $(pswdHolder).removeClass(`alert-mode`);
+  }, 1500);
 }
 
 $(copy2ClipBtn).on(`click`, () => {
