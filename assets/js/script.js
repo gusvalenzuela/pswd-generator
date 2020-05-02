@@ -12,10 +12,10 @@ const numString = `0123456789`;
 const msg = document.querySelector(`#display-msg`);
 
 // grabbing all the checkboxes and their bootstrap elements
-uCaseCheck = document.querySelector(`#upper-case`);
-lCaseCheck = document.querySelector(`#lower-case`);
-spCheck = document.querySelector(`#special`);
-numCheck = document.querySelector(`#numbers`);
+const uCaseCheck = document.querySelector(`#upper-case`);
+const lCaseCheck = document.querySelector(`#lower-case`);
+const spCheck = document.querySelector(`#special`);
+const numCheck = document.querySelector(`#numbers`);
 
 init();
 
@@ -24,7 +24,7 @@ function init() {
   lCaseCheck.checked = true;
   $(`.fa-check`).hide();
   // initializing lower case styling, as it's initially selected
-  $(lCaseLI).attr(`style`, `background: #539667;`);
+  $(lCaseLI).attr(`style`, `background: #b1f6cb;`);
   $(lCaseLI.children[1]).show();
   isCheckboxSelected();
   runGenerator();
@@ -50,7 +50,7 @@ const copyToClipboard = (str) => {
     document.getSelection().removeAllRanges(); // Unselect everything on the HTML document
     document.getSelection().addRange(selected); // Restore the original selection
   }
-  showCopiedAlert()
+  showCopiedAlert();
 };
 
 // updating displayed value when value is changed (slider moved)
@@ -61,7 +61,7 @@ $(sliderVal).on(`change`, () => {
   slider.value = sliderVal.value;
 });
 
-function isCheckboxSelected() {
+function isCheckboxSelected(option) {
   if (
     !uCaseCheck.checked &&
     !lCaseCheck.checked &&
@@ -70,9 +70,17 @@ function isCheckboxSelected() {
   ) {
     msg.textContent = "* must select one *";
     optionsList.setAttribute(`style`, `border: 4px groove red;`);
+    pswdHolder.classList.add(`text-danger`);
+    pswdHolder.textContent = `SELECT AN OPTION BELOW.`;
+    return false;
   } else {
     msg.textContent = "";
     optionsList.setAttribute(`style`, ``);
+    pswdHolder.classList.remove(`text-danger`);
+    if (option == `run`) {
+      runGenerator();
+    }
+    return true;
   }
 }
 
@@ -102,10 +110,7 @@ function runGenerator() {
       var j = Math.floor(Math.random() * currentString.length);
       generatedPswd = generatedPswd + currentString[j];
     }
-  } else {
-    pswdHolder.textContent(`Select an option below.`);
   }
-
   pswdHolder.textContent = generatedPswd;
 }
 const showCopiedAlert = () => {
@@ -116,9 +121,13 @@ const showCopiedAlert = () => {
     $(`.copied-toast`).hide();
     $(pswdHolder).removeClass(`alert-mode`);
   }, 2000);
-}
+};
 
 $(copy2ClipBtn).on(`click`, () => {
+  console.log(isCheckboxSelected());
+  if (isCheckboxSelected() === false) {
+    return;
+  }
   copyToClipboard(pswdHolder.textContent);
 });
 
@@ -138,14 +147,14 @@ $(optionsList).on(`click`, () => {
     } else {
       chosenInput.checked = true;
       $(chosenIcon).show();
-      $(event.target).attr(`style`, `background: #539667;`);
+      $(event.target).attr(`style`, `background: #b1f6cb;`);
     }
 
-    isCheckboxSelected();
+    isCheckboxSelected(`run`);
   }
 });
 
 $(refreshBtn).click(() => {
   // console.log(`hey`)
-  runGenerator();
+  isCheckboxSelected(`run`);
 });

@@ -67,22 +67,22 @@ h3 {
 .alert-mode {
   background: #01010177 !important;
   filter: blur(1px);
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 .password-holder {
   position: relative;
   border: 4px groove transparent;
 }
 .copied-toast {
-  color: #ffffffff;
-  font-weight: 400;
+  color: #ffffff;
+  font-weight: 800;
   font-size: 18px;
   text-transform: uppercase;
   position: absolute;
-  left:27%;
+  left: 27%;
   top: 17%;
   padding: 0 0.5rem;
-  letter-spacing: 1rem;
+  letter-spacing: .667rem;
 }
 .btn-custom {
   padding: 0.25rem 0.5rem;
