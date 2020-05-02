@@ -22,10 +22,10 @@ init();
 function init() {
   sliderVal.value = slider.value; // displaying default value
   lCaseCheck.checked = true;
-  $(`.fa-check`).hide()
+  $(`.fa-check`).hide();
   // initializing lower case styling, as it's initially selected
   $(lCaseLI).attr(`style`, `background: #539667;`);
-  $(lCaseLI.children[1]).show()
+  $(lCaseLI.children[1]).show();
   isCheckboxSelected();
   runGenerator();
 }
@@ -56,6 +56,9 @@ const copyToClipboard = (str) => {
 slider.oninput = function () {
   sliderVal.value = slider.value;
 };
+$(sliderVal).on(`change`, () => {
+  slider.value = sliderVal.value;
+});
 
 function isCheckboxSelected() {
   if (
@@ -91,7 +94,7 @@ function runGenerator() {
   if (numCheck.checked) {
     currentString = currentString + numString;
   }
-  
+
   if (currentString !== ``) {
     // creating a random number used to pull from the currentString by index
     for (i = 0; i < slider.value; i++) {
@@ -99,8 +102,7 @@ function runGenerator() {
       generatedPswd = generatedPswd + currentString[j];
     }
   } else {
-
-    pswdHolder.textContent(`Select an option below.`)
+    pswdHolder.textContent(`Select an option below.`);
   }
 
   pswdHolder.textContent = generatedPswd;
@@ -117,15 +119,15 @@ $(optionsList).on(`click`, () => {
     return;
   } else {
     let chosenInput = target.children[0];
-    let chosenIcon = target.children[1]
+    let chosenIcon = target.children[1];
 
     if ($(chosenInput).prop("checked") === true) {
       chosenInput.checked = false;
-      $(chosenIcon).hide()
+      $(chosenIcon).hide();
       $(event.target).attr(`style`, `background: white;`);
     } else {
       chosenInput.checked = true;
-      $(chosenIcon).show()
+      $(chosenIcon).show();
       $(event.target).attr(`style`, `background: #539667;`);
     }
 
