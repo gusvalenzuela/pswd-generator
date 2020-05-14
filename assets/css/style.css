@@ -65,9 +65,9 @@ h3 {
   background: #777;
 }
 .alert-mode {
-  background: #01010177 !important;
-  filter: blur(1px);
-  transition: 0.25s ease-in-out;
+  background: #0101019c !important;
+  filter: blur(.05em);
+  transition: .12s ease-out;
 }
 .password-holder {
   position: relative;
@@ -75,14 +75,15 @@ h3 {
 }
 .copied-toast {
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 18px;
+  font-family: monospace !important;
   text-transform: uppercase;
   position: absolute;
-  left: 27%;
+  right: 50%;
   top: 17%;
   padding: 0 0.5rem;
-  letter-spacing: .667rem;
+  letter-spacing: 2px;
 }
 .btn-custom {
   padding: 0.25rem 0.5rem;

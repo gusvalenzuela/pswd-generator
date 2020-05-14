@@ -56,9 +56,11 @@ const copyToClipboard = (str) => {
 // updating displayed value when value is changed (slider moved)
 slider.oninput = function () {
   sliderVal.value = slider.value;
+  isCheckboxSelected(`run`)
 };
 $(sliderVal).on(`change`, () => {
   slider.value = sliderVal.value;
+  isCheckboxSelected(`run`)
 });
 
 function isCheckboxSelected(option) {
@@ -114,8 +116,8 @@ function runGenerator() {
   pswdHolder.textContent = generatedPswd;
 }
 const showCopiedAlert = () => {
-  $(`.copied-toast`).show();
   $(pswdHolder).addClass(`alert-mode`);
+  $(`.copied-toast`).show();
 
   setTimeout(() => {
     $(`.copied-toast`).hide();
