@@ -1,5 +1,5 @@
-const slider = document.querySelector(`#pswd-length`);
-const sliderVal = document.querySelector(`#val-holder`);
+const lengthSlider = document.querySelector(`#pswd-length`);
+const lengthInput = document.querySelector(`#val-holder`);
 const pswdHolder = document.querySelector(`#generated-password`);
 const refreshBtn = document.querySelectorAll(`.refresh-button`);
 const copy2ClipBtn = document.querySelectorAll(`.copy-button`);
@@ -20,7 +20,7 @@ const numCheck = document.querySelector(`#numbers`);
 init();
 
 function init() {
-  sliderVal.value = slider.value; // displaying default value
+  lengthInput.value = lengthSlider.value; // displaying default value
   lCaseCheck.checked = true;
   $(`.fa-check`).hide();
   // initializing lower case styling, as it's initially selected
@@ -53,14 +53,14 @@ const copyToClipboard = (str) => {
   showCopiedAlert();
 };
 
-// updating displayed value when value is changed (slider moved)
-slider.oninput = function () {
-  sliderVal.value = slider.value;
-  isCheckboxSelected(`run`)
+// updating displayed value when value is changed (lengthSlider moved)
+lengthSlider.oninput = function () {
+  lengthInput.value = lengthSlider.value;
+  isCheckboxSelected(`run`);
 };
-$(sliderVal).on(`change`, () => {
-  slider.value = sliderVal.value;
-  isCheckboxSelected(`run`)
+$(lengthInput).on(`change`, () => {
+  lengthSlider.value = lengthInput.value;
+  isCheckboxSelected(`run`);
 });
 
 function isCheckboxSelected(option) {
@@ -73,7 +73,7 @@ function isCheckboxSelected(option) {
     msg.textContent = "* must select one *";
     optionsList.setAttribute(`style`, `border: 4px groove red;`);
     pswdHolder.classList.add(`text-danger`);
-    pswdHolder.textContent = `SELECT AN OPTION BELOW.`;
+    pswdHolder.value = `SELECT AN OPTION BELOW.`;
     return false;
   } else {
     msg.textContent = "";
@@ -91,7 +91,7 @@ function runGenerator() {
   let currentString = ``;
   let generatedPswd = ``;
 
-  pswdHolder.textContent = "";
+  pswdHolder.value = "";
 
   if (lCaseCheck.checked) {
     currentString = currentString + lCaseString;
@@ -108,12 +108,12 @@ function runGenerator() {
 
   if (currentString !== ``) {
     // creating a random number used to pull from the currentString by index
-    for (i = 0; i < slider.value; i++) {
+    for (i = 0; i < lengthSlider.value; i++) {
       var j = Math.floor(Math.random() * currentString.length);
       generatedPswd = generatedPswd + currentString[j];
     }
   }
-  pswdHolder.textContent = generatedPswd;
+  pswdHolder.value = generatedPswd;
 }
 const showCopiedAlert = () => {
   $(pswdHolder).addClass(`alert-mode`);
@@ -130,7 +130,7 @@ $(copy2ClipBtn).on(`click`, () => {
   if (isCheckboxSelected() === false) {
     return;
   }
-  copyToClipboard(pswdHolder.textContent);
+  copyToClipboard(pswdHolder.value);
 });
 
 $(optionsList).on(`click`, () => {

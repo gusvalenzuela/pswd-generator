@@ -64,10 +64,23 @@ h3 {
   text-align: center;
   background: #777;
 }
+#generated-password {
+  outline: none;
+  overflow: auto;
+  white-space: nowrap;
+  border: 1px #02020233 solid;
+  box-shadow: #02020211 2px 2px inset;
+}
+#pswd-length {
+  background: #292b2c;
+  color: #292b2c;
+  padding: 0.15rem;
+}
 .alert-mode {
   background: #0101019c !important;
-  filter: blur(.05em);
-  transition: .12s ease-out;
+  filter: blur(1px);
+  border: 1px solid transparent !important;
+  border-right-color: transparent !important;
 }
 .password-holder {
   position: relative;
@@ -80,8 +93,8 @@ h3 {
   font-family: monospace !important;
   text-transform: uppercase;
   position: absolute;
-  right: 50%;
-  top: 17%;
+  left: 0;
+  top: 11%;
   padding: 0 0.5rem;
   letter-spacing: 2px;
 }
@@ -109,16 +122,7 @@ h3 {
 .footer {
   border-top: 5px inset black;
 }
-#generated-password {
-  line-height: 40px;
-  border: 1px #02020233 solid;
-  box-shadow: #02020211 2px 2px inset;
-}
-#pswd-length {
-  background: #292b2c;
-  color: #292b2c;
-  padding: 0.15rem;
-}
+
 #resource-credits {
   font-size: 8px;
   padding: 0;
@@ -134,10 +138,6 @@ h3 {
 @media screen and (max-width: 576px) {
   .s-screen {
     font-size: 18px;
-  }
-
-  .copied-toast {
-    left: 17%;
   }
 }
 /* Width at 336px and below */

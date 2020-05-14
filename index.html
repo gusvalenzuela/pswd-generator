@@ -30,11 +30,13 @@
         <div class="col-10 col-md-8 col-lg-6 p-4 bg-dark content-wrap">
           <!-- row to hold the generated password  -->
           <div class="row password-holder mb-1 bg-white" id="password-holder">
-            <span
-              class="col text-monospace text-truncate px-1"
+            <input
+              class="col text-monospace px-1"
               id="generated-password"
+              value=""
+              spellcheck="false"
             >
-            </span
+            </input
             ><span class="copied-toast" style="display: none;">copied</span>
             <button
               id="refresh-button-inside"
